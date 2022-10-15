@@ -1,0 +1,27 @@
+body{
+    background-color: #EAEDF4;
+}
+
+.borders{
+    /* border: 2px solid red; */
+}
+
+#maindetails{
+    background-color: white;
+    height: 200px;
+    border-radius: 30px 30px 30px 30px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+#subdetails{
+    background-color: white;
+    border-radius: 30px 30px 30px 30px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    height: 100%;
+    
+
+}
+
