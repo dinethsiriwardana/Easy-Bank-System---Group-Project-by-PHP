@@ -1,7 +1,7 @@
 <?php
 $servername = "173.254.104.205";
 $username = "mayurapa_fotdb";
-$password = "W8g~a@F1-N#B";
+$password = " ";
 $dbname = "mayurapa_fotdb";
 
 $conn = new mysqli($servername, $username, $password,$dbname);
