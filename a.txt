@@ -1,0 +1,8 @@
+1. User / Admin Login  Raveesha
+2. User Registration Anu
+3. Change Password Hiru
+4. Admin Approval Dineth
+5. See Balance Hasitha (Comp)
+6. Send Money Tharu
+7. Bank Statement  Hasith
+8. Loggin Log Hima

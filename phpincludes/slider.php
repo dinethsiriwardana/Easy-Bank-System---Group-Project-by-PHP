@@ -68,19 +68,19 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="/" class="nav-link active" aria-current="page">
         <i class="fa-sharp fa-solid fa-house"></i>
         &nbsp;Home
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="sendmoney.php" class="nav-link text-white">
         <i class="fa-solid fa-money-bill-transfer"></i> &nbsp;
           Money Transfre
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="bankstatement.php" class="nav-link text-white">
         <i class="fa-solid fa-list-ul"></i> &nbsp;
           Records
         </a>
