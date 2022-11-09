@@ -1,6 +1,7 @@
 <?php
 // session_destroy();
-include "landing_page.php" ;
+include "landing_page.php";
+include "php/statement.php"
 
 
 ?>
@@ -36,20 +37,22 @@ include "landing_page.php" ;
       }
     }
   </style>
-  
+
 
 
   <!-- Custom styles for this template -->
   <link href="sidebars/sidebars.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
-  
+
   <!-- <link rel="stylesheet" href="https://fontawesome.com/releases/v5.15/css/all.css"/> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/font-awesome.min.css">
   <script src="js/jquery.js"></script>
 
-    <script>
-      filename = "home"
-    </script>
+  <script>
+    filename = "home"
+  </script>
+
+
 
 
 
@@ -62,30 +65,18 @@ include "landing_page.php" ;
   <main>
     <h1 class="visually-hidden">Sidebars examples</h1>
 
-  <?php
-  include "phpincludes/slider.php" ;
-  ?>
+    <?php
+    include "phpincludes/slider.php";
+    ?>
 
     <div class="b-example-divider">
     </div>
     <div class="container borders">
 
       <div class="row">
-        <div class="col-4 borders">
-          <div class="container" id="maindetails">
-            Name:
-            <?php echo $_SESSION['UID']; ?>
-            <h4>
-              S.A.Dineth Siriwardhana<br>
-            </h4>
-            Acc No: <h5>100200300</h5>
-
-            Janidu,<br>
-            Linkeppitiya,<br>
-
-          </div>
-        </div>
-
+        <?php
+        include "php/details_card.php";
+        ?>
         <div class="col-8 borders">
           <div class="container d-flex align-items-center" id="maindetails">
             <div class="row d-flex align-items-center p-3">
@@ -110,7 +101,7 @@ include "landing_page.php" ;
                   </h5>
                   <h3>
                     RS.
-                    100,000.00
+                    <?php l_income() ?>
                   </h3>
                 </div>
                 <div class="row p-1 text-danger">
@@ -118,7 +109,7 @@ include "landing_page.php" ;
                     Last Expense ↓
                   </h5>
                   <h3>
-                    RS. 55,000.00
+                  <?php l_expence() ?>
                   </h3>
                 </div>
               </div>
@@ -136,11 +127,19 @@ include "landing_page.php" ;
             <div class="d-grid gap-2">
               <button class="btn btn-lg btn-dark"><i class="fa-regular fa-share-from-square"></i> &nbsp;&nbsp;&nbsp;Send Money</button>
             </div>
+            <br>
+            <br>
+
+            <div>
+              <canvas id="myChart"></canvas>
+            </div>
 
           </div>
         </div>
         <div class="col-8 borders">
-
+          <div class="container" id="subdetails">
+            
+          </div>
         </div>
       </div>
     </div>
@@ -151,6 +150,45 @@ include "landing_page.php" ;
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/customjs/slider.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  const labels = [
+    'Total Income',
+    'Total Expence',
+    
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: [
+      '#14A44D',
+      'rgb(212, 50, 66)'
+    ],
+      data: [<?php t_income() ?>, <?php t_expence() ?>],
+    }]
+  };
+
+  const config = {
+  type: 'doughnut',
+    data: data,
+    options: {
+      
+    }
+  };
+
+
+
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    
+    config
+  );
+</script>
 
   <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>
 </body>

@@ -49,17 +49,16 @@ include "php/getdetails.php";
   </script>
   <script>
     $(document).ready(function() {
-      
-      
-      <?php  floatval($row['balance']); ?>
+
+
 
       $("#amount").keyup(function() {
-           if( $("#amount").val() >  <?php echo floatval($row['balance']); ?>){
-            $("#amount").val( <?php echo floatval($row['balance']).".00"; ?>)
+        if ($("#amount").val() > <?php echo floatval($user_account_balance['balance']); ?>) {
+          $("#amount").val(<?php echo floatval($user_account_balance['balance']) . ".00"; ?>)
 
-           }
-    
-          });
+        }
+
+      });
 
     });
   </script>
@@ -82,20 +81,9 @@ include "php/getdetails.php";
     <div class="container borders">
 
       <div class="row">
-        <div class="col-4 borders">
-          <div class="container" id="maindetails">
-            Name:
-            <?php echo $_SESSION['UID']; ?>
-            <h4>
-              S.A.Dineth Siriwardhana<br>
-            </h4>
-            Acc No: <h5>100200300</h5>
-
-            Janidu,<br>
-            Linkeppitiya,<br>
-
-          </div>
-        </div>
+        <?php
+        include "php/details_card.php";
+        ?>
 
         <div class="col-8 borders">
           <div class="container d-flex align-items-center" id="maindetails">
@@ -109,7 +97,7 @@ include "php/getdetails.php";
                   <div class="h6">
                     LKR.<br>
                     <div class="h1">
-                      <?php echo $row['balance']; ?>
+                      <?php echo $user_account_balance['balance']; ?>
                     </div>
                   </div>
                 </h1>
@@ -155,7 +143,7 @@ include "php/getdetails.php";
                   <label for="admin/user">Account Name:</label>
                   <input class="form-control" type="text" name="sname" id="sname" value="sname" readonly required><br>
                   <label for="admin/user">Account Number:</label>
-                  <input class="form-control" type="text" name="snumber" id="snumber" value="<?php echo $_COOKIE['UID']; ?>"  readonly><br>
+                  <input class="form-control" type="text" name="snumber" id="snumber" value="<?php echo $_COOKIE['UID']; ?>" readonly><br>
                   <hr>
                   <label for="admin/user">Description:</label>
                   <input class="form-control" type="text" name="description" id="username" required><br>

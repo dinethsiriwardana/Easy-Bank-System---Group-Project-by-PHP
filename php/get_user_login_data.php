@@ -45,7 +45,17 @@ if ($result->num_rows == 1) {
 
         }else{
 
-            setcookie('UID', $row["UID"], time() + 1200, "/");
+      
+            
+            setcookie('UID', $row["UID"], time() + 2400, "/");
+            $dt2=date("Y-m-d H:i:s");
+            $loginsert = "INSERT INTO ".$_COOKIE['UID']."_logging_log (record_type,record_time)
+            VALUES ('Log In', '$dt2')";
+            if ($conn->query($loginsert) === TRUE) {
+            
+            } else {
+            echo "Error: " . $loginsert . "<br>" . $conn->error;
+            }
             header("location: ../index.php");
         }
     }

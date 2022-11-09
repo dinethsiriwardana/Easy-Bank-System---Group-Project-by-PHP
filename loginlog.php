@@ -1,5 +1,6 @@
 <?php
 include "php/dbcon.php" ;
+include "php/log_statement.php" ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,51 +54,71 @@ include "php/dbcon.php" ;
         <div class="b-example-divider">
         </div>
         <div class="container borders">
+<div class="row">
+<?php
+        include "php/details_card.php";
+        ?>
+            <div class="col-8 borders">
+                <div class="container" id="maindetails">
+                    <div class="row d-flex  justify-content-between p-3">
+                    <div class="col text-primary"></div>
 
-            <div class="col borders">
-                <div class="container d-flex align-items-center" id="maindetails">
-                    <div class="row d-flex align-items-center  justify-content-evenl p-3">
                         <div class="col text-primary">
-                        
                             <h6>
                                 Total 
                             </h6>
-
                             <h1>
                                 <div class="h3">
                                     Activites<br>
                                     <div class="h1">
-                                      20
+                                      <?php all_act(); ?>
                                     </div>
                                 </div>
                             </h1>
                         </div>
-                        <div class="col text-primary">
-                        
-                            <h6>
-                                Total 
-                            </h6>
+                        <div class="col text-primary"></div>
 
+                        <div class="col text-primary">
+                            <h6>
+                                Total Log In
+                            </h6>
                             <h1>
                                 <div class="h3">
                                     Activites<br>
                                     <div class="h1">
-                                     
-                                    20
+                                    <?php all_in_act(); ?>
+
                                     </div>
                                 </div>
                             </h1>
                         </div>
-                        
-                      
+                        <div class="col text-primary"></div>
+
+                        <div class="col text-primary">
+                            <h6>
+                                Total Log Out
+                            </h6>
+                            <h1>
+                                <div class="h3">
+                                    Activites<br>
+                                    <div class="h1">
+                                    <?php all_out_act(); ?>
+
+                                    </div>
+                                </div>
+                            </h1>
+                        </div>
+                        <div class="col text-primary"></div>
+
                     </div>
                 </div>
+            </div>
             </div>
 
 
             <div class="row">
                 <div class="col borders">
-                    <div class="container" id="maindetails">
+                    <div class="container" id="maintitlenohi">
                         <table class="table">
                             <thead>
                                 <tr class="table-secondary">
@@ -110,12 +131,12 @@ include "php/dbcon.php" ;
                             <tbody>
 
                                 <?php 
-                                    $record = "SELECT * FROM logging_log ORDER BY log_id DESC";
+                                    $record = "SELECT * FROM ".$_COOKIE['UID']."_logging_log ORDER BY log_id DESC LIMIT 10";
                                     if ($result = mysqli_query($conn, $record)) {
                                         if (mysqli_num_rows($result) > 0) {
                                            
                                             while ($row = mysqli_fetch_array($result)) {
-                                                 $tabletrtype = ($row['record_type'] == "logged-in"	) ? "primary" : "danger";
+                                                 $tabletrtype = ($row['record_type'] == "Log In"	) ? "primary" : "danger";
 
                                                 echo "<tr class='table-$tabletrtype'>";
                                                     echo "<td class='table-$tabletrtype'>".$row['log_id']."</td>";
@@ -123,13 +144,14 @@ include "php/dbcon.php" ;
                                                     echo "<td class='table-$tabletrtype'>".$row['record_time']."</td>";
                                                 echo "</tr>";
                                             }
-                                            echo "<tbody>";
-                                            echo "</table>";
+                                           
                                             // mysqli_free_result($result);
                                         }
                                         else {
-                                            echo "No matching records are found.";
-                                        }
+                                            echo "<tr class='table-primary align-middle '>";
+                        
+                                            echo "<td  colspan='3' class='table-primary align-middle '>No matching records are found.</td>";
+                                            echo "</tr>";                                        }
                                     }
                                     else {
                                         echo "ERROR: Could not able to execute $sql. "
@@ -138,6 +160,8 @@ include "php/dbcon.php" ;
             
             
                                     $conn->close();
+                                    echo "<tbody>";
+                                    echo "</table>";
                                 ?>
                                  
                                 </tr>

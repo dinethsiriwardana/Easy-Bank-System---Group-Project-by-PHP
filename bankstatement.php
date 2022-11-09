@@ -1,3 +1,8 @@
+<?php
+include "php/statement.php" ;
+include "landing_page.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,6 +50,7 @@
 
         <?php
         include "phpincludes/slider.php";
+        
         ?>
 
         <div class="b-example-divider">
@@ -55,7 +61,7 @@
                 <div class="container d-flex align-items-center" id="maindetails">
                     <div class="row d-flex align-items-center  justify-content-evenl p-3">
                         <div class="col text-primary">
-                        
+
                             <h3>
                                 Balance:
                             </h3>
@@ -64,7 +70,7 @@
                                 <div class="h6">
                                     LKR.<br>
                                     <div class="h1">
-                                        154,300.00
+                                        <?php get_balance() ?>
                                     </div>
                                 </div>
                             </h1>
@@ -76,7 +82,7 @@
                                 </h5>
                                 <h3>
                                     RS.
-                                    100,000.00
+                                    <?php l_income() ?>
                                 </h3>
                             </div>
                             <div class="row p-1 text-danger">
@@ -84,7 +90,8 @@
                                     Last Expense ↓
                                 </h5>
                                 <h3>
-                                    RS. 55,000.00
+                                    RS.
+                                    <?php l_expence() ?>
                                 </h3>
                             </div>
                         </div>
@@ -95,7 +102,7 @@
                                 </h5>
                                 <h3>
                                     RS.
-                                    100,000.00
+                                    <?php t_income() ?>
                                 </h3>
                             </div>
                             <div class="row p-1 text-danger">
@@ -103,11 +110,12 @@
                                     Total of Expense ↓
                                 </h5>
                                 <h3>
-                                    RS. 55,000.00
+                                    RS.
+                                   <?php t_expence() ?>
                                 </h3>
                             </div>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>
@@ -115,33 +123,51 @@
 
             <div class="row">
                 <div class="col borders">
-                    <div class="container" id="maindetails">
-                        <table class="table">
-                            <thead>
-                                <tr class="table-secondary">
+                    <div class="container p-4" id="maintitlenohi">
+                        <center>
 
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-primary">
+                            <h3>Account Statement</h3><br>
+                        </center>
+                        <?php
+                        include "php/dbcon.php";
+                        $record = "SELECT * FROM " . $_COOKIE['UID'] . "_account_statement ORDER BY rec_no DESC LIMIT 10";
+                        if ($result = mysqli_query($conn, $record)) {
 
-                                    <td class="table-primary">Mark</td>
-                                    <td class="table-primary">Otto</td>
-                                    <td class="table-primary">@mdo</td>
-                                </tr>
+                            if (mysqli_num_rows($result) > 0) {
+                                echo "<table class = 'table'>";
+                                echo "<thead>";
+                                echo "<tr class='table-secondary'>";
+                                echo "<th scope='col'>Transaction Type</th>";
+                                echo "<th scope='col'>Account number</th>";
+                                echo "<th scope='col'>Name</th>";
+                                echo "<th scope='col'>Description</th>";
+                                echo "<th scope='col'>Amount</th>";
+                                echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while ($row = mysqli_fetch_array($result)) {
+                                    $tabletrtype = ($row['transaction_type'] == 'IN') ? "primary" : "danger";
 
-                                <tr class="table-danger">
+                                    echo "<tr class='table-$tabletrtype'>";
+                                    echo "<td class='table-$tabletrtype'>" . $row['transaction_type'] . "</td>";
+                                    echo "<td class='table-$tabletrtype'>" . $row['s_r_account_number'] . "</td>";
+                                    echo "<td class='table-$tabletrtype'>" . $row['s_r_account_name'] . "</td>";
+                                    echo "<td class='table-$tabletrtype'>" . $row['description'] . "</td>";
+                                    echo "<td class='table-$tabletrtype'>" . $row['amount'] . "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "<tbody>";
+                                echo "</table>";
+                                mysqli_free_result($result);
+                            } else {
+                                echo "No matching records are found.";
+                            }
+                        } else {
+                            echo "ERROR: Could not able to execute $sql. "
+                                . mysqli_error($conn);
+                        }
 
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
+                        ?>
 
                     </div>
                 </div>

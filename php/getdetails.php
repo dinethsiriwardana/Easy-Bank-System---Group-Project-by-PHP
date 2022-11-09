@@ -11,7 +11,7 @@ $getbalancefromuserresult = $conn->query($getbalancefromuser);
 
 if ($getbalancefromuserresult->num_rows > 0) {
     
-    $row = $getbalancefromuserresult->fetch_assoc();
+    $user_account_balance = $getbalancefromuserresult->fetch_assoc();
    
 
 }
