@@ -31,6 +31,26 @@
     <link href="css/custom.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $(document).ready(function() {
+ 
+
+            $('#passwordcfm').keyup(function(){
+
+                passwordval = document.getElementById("password").value;
+                if (passwordval ==  document.getElementById("passwordcfm").value ) {
+                    if (passwordval.length > 7) {
+                        document.getElementById("submitbtn").className = 'btn btn-outline-primary';
+                    }
+                }else{
+                    document.getElementById("submitbtn").className = 'btn btn-outline-danger disabled';
+                }
+               
+            });
+        });
+    </script>
 
 </head>
 
@@ -38,7 +58,7 @@
 
     <div class="col-6 borders bg-primary  height500 shadow mb-5  rounded">
 
-        <form action="./php/get_user_login_data.php?type=admin" method="post">
+        <form action="./php/reg_user_data.php" method="post">
             <div class="container ">
                 <div class="row">
                     <div class="col d-flex justify-content-center ">
@@ -55,37 +75,26 @@
                     <div class="col  bg-light height500 shadow-inner d-flex justify-content-center align-items-center">
                         <div class="container">
                             <center>
-                                <h2>Admin Login</h2>
+                                <h2>User Registration</h2>
                                 <br>
                             </center>
-
-                            <?php 
-                            if(isset($_GET['error'])) {
-  
-                              echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                              <strong>Error!</strong> Please Check Your Username or Password
-                              <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                            </div>";
-                            
-                            }
-                            ?>
-                            
                             <label for="admin/user">User Name:</label>
-                            <input class="form-control" type="text" name="username" id="username"><br>
+                            <input class="form-control" type="text" name="username" id="username" required><br>
                             <label for="password">Password :</label>
-                            <input class="form-control" type="password" id="password" name="password" maxlength="10"><br>
+                            <input class="form-control" type="password" id="password" name="password" maxlength="10" required ><br>
+                            <label for="password">Password Confirm :</label>
+                            <input class="form-control" type="password" id="passwordcfm" name="passwordcfm" maxlength="10" required><br>
                             <div class="row">
                                 <div class="d-grid gap-2 col-5 mx-auto">
-                                    <input class="btn btn-outline-primary" type="submit" value="Login" btn id="btn_1">
+                                    <input class="btn btn-outline-danger disabled" type="submit" value="Register" id="submitbtn">
                                 </div>
-                                <div class="d-grid gap-2 col-5 mx-auto">
-                                    <input class="btn btn-outline-secondary" type="reset" value="Reset" btn id="btn_2">
-                                </div>
+
                             </div>
                             <div class="row mt-3">
                                 <center>
-                                <a href="user_login.php">Login as a User</a>
+                                    Have as Account ? <b> <a href="user_login.php">Login</a></b>
                                 </center>
+
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,9 @@
+<?php
+// session_destroy();
+include "landing_page.php" ;
+
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
-  <title>Sidebars · Bootstrap v5.0</title>
+  <title>Easy Money</title>
 
 
 
@@ -66,6 +72,7 @@
         <div class="col-4 borders">
           <div class="container" id="maindetails">
             Name:
+            <?php echo $_SESSION['UID']; ?>
             <h4>
               S.A.Dineth Siriwardhana<br>
             </h4>

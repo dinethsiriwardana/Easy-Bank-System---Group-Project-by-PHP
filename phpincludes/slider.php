@@ -68,7 +68,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link active" aria-current="page">
+        <a href="./" class="nav-link active" aria-current="page">
         <i class="fa-sharp fa-solid fa-house"></i>
         &nbsp;Home
         </a>
@@ -92,7 +92,7 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="loginlog.php" class="nav-link text-white">
         <i class="fa-solid fa-user-clock"></i>
         &nbsp; User Log
         </a>
@@ -114,7 +114,8 @@
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><a class="dropdown-item" href="php/logout.php">Sign out</a></li>
       </ul>
     </div>
   </div>
+  <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>

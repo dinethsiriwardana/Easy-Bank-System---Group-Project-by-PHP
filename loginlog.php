@@ -1,3 +1,6 @@
+<?php
+include "php/dbcon.php" ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +82,8 @@
                                 <div class="h3">
                                     Activites<br>
                                     <div class="h1">
-                                      20
+                                     
+                                    20
                                     </div>
                                 </div>
                             </h1>
@@ -98,17 +102,44 @@
                             <thead>
                                 <tr class="table-secondary">
 
-                                    <th scope="col">No</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Time</th>
+                                    <th scope="col">Log id</th>
+                                    <th scope="col">Record Type</th>
+                                    <th scope="col">Record Time</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="table-primary">
 
-                                    <td class="table-primary">1</td>
-                                    <td class="table-primary">Logged-In</td>
-                                    <td class="table-primary">2022-10-06 01:10:00</td>
+                                <?php 
+                                    $record = "SELECT * FROM logging_log ORDER BY log_id DESC";
+                                    if ($result = mysqli_query($conn, $record)) {
+                                        if (mysqli_num_rows($result) > 0) {
+                                           
+                                            while ($row = mysqli_fetch_array($result)) {
+                                                 $tabletrtype = ($row['record_type'] == "logged-in"	) ? "primary" : "danger";
+
+                                                echo "<tr class='table-$tabletrtype'>";
+                                                    echo "<td class='table-$tabletrtype'>".$row['log_id']."</td>";
+                                                    echo "<td class='table-$tabletrtype'>".$row['record_type']."</td>";
+                                                    echo "<td class='table-$tabletrtype'>".$row['record_time']."</td>";
+                                                echo "</tr>";
+                                            }
+                                            echo "<tbody>";
+                                            echo "</table>";
+                                            // mysqli_free_result($result);
+                                        }
+                                        else {
+                                            echo "No matching records are found.";
+                                        }
+                                    }
+                                    else {
+                                        echo "ERROR: Could not able to execute $sql. "
+                                                                    .mysqli_error($conn);
+                                    }
+            
+            
+                                    $conn->close();
+                                ?>
+                                 
                                 </tr>
 
                             
@@ -118,9 +149,6 @@
 
                     </div>
                 </div>
-
-
-
             </div>
 
 

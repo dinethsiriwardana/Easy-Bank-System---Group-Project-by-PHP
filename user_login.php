@@ -38,7 +38,7 @@
 
     <div class="col-6 borders bg-primary  height500 shadow mb-5  rounded">
 
-        <form action=" " method="post">
+        <form action="./php/get_user_login_data.php?type=user" method="post">
             <div class="container ">
                 <div class="row">
                     <div class="col d-flex justify-content-center ">
@@ -55,13 +55,35 @@
                     <div class="col  bg-light height500 shadow-inner d-flex justify-content-center align-items-center">
                         <div class="container">
                             <center>
-                                <h2>Admin Login</h2>
+                                <h2>User Login</h2>
                                 <br>
                             </center>
+
+                            <?php 
+                            if(isset($_GET['error'])) {
+                                if ($_GET['error'] == 'noacc') {
+                                    echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                    <strong>Error!</strong> Your account is still on pending
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                    </div>";                                }else{
+
+                                    echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                    <strong>Error!</strong> Please Check Your Username or Password
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                    </div>";
+                                }
+                            
+                            }
+                            ?>
                             <label for="admin/user">User Name:</label>
                             <input class="form-control" type="text" name="username" id="username"><br>
                             <label for="password">Password :</label>
                             <input class="form-control" type="password" id="password" name="password" maxlength="10"><br>
+
+
+                          
+
+
                             <div class="row">
                                 <div class="d-grid gap-2 col-5 mx-auto">
                                     <input class="btn btn-outline-primary" type="submit" value="Login" btn id="btn_1">
@@ -72,7 +94,14 @@
                             </div>
                             <div class="row mt-3">
                                 <center>
-                                <a href="">Login as a User</a>
+                                No Account ? <b> <a href="register.php">Create one!</a></b>
+                                </center>
+                                <center>
+                                    <br>
+                            
+
+                                    <a href="admin_login.php">Login as a Admin</a>
+                               
                                 </center>
                             </div>
                         </div>
@@ -83,6 +112,7 @@
         </form>
     </div>
     <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 

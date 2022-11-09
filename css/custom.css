@@ -14,6 +14,21 @@ body{
     margin-bottom: 20px;
     padding: 20px;
 }
+#maintitlebox{
+    background-color: white;
+    height: 50px;
+    border-radius: 30px 30px 30px 30px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+#maintitlenohi{
+    background-color: white;
+    border-radius: 30px 30px 30px 30px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
 #subdetails{
     background-color: white;
     border-radius: 30px 30px 30px 30px; 
@@ -31,4 +46,5 @@ body{
 .height300{
     height: 600px;
 }
+
 
