@@ -242,7 +242,6 @@ if(!isset($_COOKIE['ROLE'])) {
 
   <script src="js/bootstrap.bundle.min.js"></script>
 
-  <script src="sidebars/sidebars.js"></script>
   <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>
 </body>
 

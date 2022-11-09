@@ -22,3 +22,6 @@ $password =  encryption($_POST['password']);
 
 
 $conn->close();
+
+
+

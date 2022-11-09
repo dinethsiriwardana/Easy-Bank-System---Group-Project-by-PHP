@@ -47,4 +47,9 @@ body{
     height: 600px;
 }
 
+.vl {
+    border-left: 6px solid green;
+    height: 500px;
+  }
+
 

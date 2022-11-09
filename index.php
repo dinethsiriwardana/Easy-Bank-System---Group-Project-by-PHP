@@ -36,18 +36,20 @@ include "landing_page.php" ;
       }
     }
   </style>
+  
 
 
   <!-- Custom styles for this template -->
   <link href="sidebars/sidebars.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
-
+  
   <!-- <link rel="stylesheet" href="https://fontawesome.com/releases/v5.15/css/all.css"/> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/font-awesome.min.css">
+  <script src="js/jquery.js"></script>
 
-
-
-
+    <script>
+      filename = "home"
+    </script>
 
 
 
@@ -148,8 +150,8 @@ include "landing_page.php" ;
 
 
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/customjs/slider.js"></script>
 
-  <script src="sidebars/sidebars.js"></script>
   <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>
 </body>
 
