@@ -71,7 +71,7 @@ include "php/statement.php"
 
     <div class="b-example-divider">
     </div>
-    <div class="container borders">
+    <div class="container borders overflow-auto">
 
       <div class="row">
         <?php
@@ -89,7 +89,7 @@ include "php/statement.php"
                   <div class="h6">
                     LKR.<br>
                     <div class="h1">
-                      154,300.00
+                    <?php get_balance() ?>
                     </div>
                   </div>
                 </h1>
@@ -109,6 +109,8 @@ include "php/statement.php"
                     Last Expense ↓
                   </h5>
                   <h3>
+                  RS.
+
                   <?php l_expence() ?>
                   </h3>
                 </div>

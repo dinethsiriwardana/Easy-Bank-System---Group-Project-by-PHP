@@ -53,6 +53,9 @@ body{
 .height500{
     height: 600px;
 }
+.height100100{
+    height: 100%;
+}
 .height300{
     height: 300px;
 }
@@ -63,3 +66,21 @@ body{
   }
 
 
+  #requires{
+    display:none;
+}
+.valid{
+    color: green;
+}
+.valid:before{
+    content:"✔";
+}
+.invalid{
+    color: red;
+}
+.invalid:before{
+    content: "✖";
+}
+#showPwd{
+    display: none;
+}

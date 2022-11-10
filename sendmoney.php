@@ -2,6 +2,8 @@
 // session_destroy();
 include "landing_page.php";
 include "php/getdetails.php";
+include "php/statement.php" ;
+
 
 ?>
 <!doctype html>
@@ -109,7 +111,7 @@ include "php/getdetails.php";
                   </h5>
                   <h3>
                     RS.
-                    100,000.00
+                    <?php l_income() ?>
                   </h3>
                 </div>
                 <div class="row p-1 text-danger">
@@ -117,7 +119,7 @@ include "php/getdetails.php";
                     Last Expense ↓
                   </h5>
                   <h3>
-                    RS. 55,000.00
+                  <?php l_expence() ?>
                   </h3>
                 </div>
               </div>

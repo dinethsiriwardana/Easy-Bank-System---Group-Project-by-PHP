@@ -3,14 +3,6 @@ include "dbcon.php";
 include "getdetails.php";
 
 
-$sname = $_POST['sname'];
-$snumber = $_POST['snumber'];
-$description = $_POST['description'];
-$rname = $_POST['rname'];
-$rnumber = $_POST['rnumber'];
-$amount = floatval($_POST['amount']);
-
-
 $onsender = floatval($user_account_balance['balance']);
 
 echo "user_account_balance - ". $user_account_balance['balance'] . "<br>";
