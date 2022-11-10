@@ -118,12 +118,12 @@ include "php/log_statement.php" ;
 
             <div class="row">
                 <div class="col borders">
-                    <div class="container" id="maintitlenohi">
+                    <div class="container p-4" id="maintitlenohi">
                         <table class="table">
                             <thead>
                                 <tr class="table-secondary">
 
-                                    <th scope="col">Log id</th>
+                                    <th scope="col">Log ID</th>
                                     <th scope="col">Record Type</th>
                                     <th scope="col">Record Time</th>
                                 </tr>

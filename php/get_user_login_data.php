@@ -33,7 +33,7 @@ if ($result->num_rows == 1) {
 
     $row = $result->fetch_assoc();
 
-
+    $uid = $row["UID"];
     if ($_GET['type'] == "admin") {
         
         setcookie('UID', $row["ANAME"], time() + 1200, "/");
@@ -47,16 +47,17 @@ if ($result->num_rows == 1) {
 
       
             
-            setcookie('UID', $row["UID"], time() + 2400, "/");
+            setcookie('UID', $uid, time() + 2400, "/");
+
             $dt2=date("Y-m-d H:i:s");
-            $loginsert = "INSERT INTO ".$_COOKIE['UID']."_logging_log (record_type,record_time)
+            $loginsert = "INSERT INTO ".$row["UID"]."_logging_log (record_type,record_time)
             VALUES ('Log In', '$dt2')";
             if ($conn->query($loginsert) === TRUE) {
             
+                header("location: ../index.php");
             } else {
             echo "Error: " . $loginsert . "<br>" . $conn->error;
             }
-            header("location: ../index.php");
         }
     }
 } else {

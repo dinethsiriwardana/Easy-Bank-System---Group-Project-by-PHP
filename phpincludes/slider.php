@@ -75,7 +75,7 @@
       <li>
         <a href="sendmoney.php" id="money" class="nav-link text-white">
         <i class="fa-solid fa-money-bill-transfer"></i> &nbsp;
-          Money Transfre
+          Money Transfer
         </a>
       </li>
       <li>

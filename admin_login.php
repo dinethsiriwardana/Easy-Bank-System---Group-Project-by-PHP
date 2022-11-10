@@ -95,6 +95,8 @@
         </form>
     </div>
     <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

@@ -56,9 +56,9 @@ body{
 .height100100{
     height: 100%;
 }
-.height300{
+/* .height300{
     height: 300px;
-}
+} */
 
 .vl {
     border-left: 6px solid green;

@@ -89,7 +89,7 @@ include "php/statement.php"
                   <div class="h6">
                     LKR.<br>
                     <div class="h1">
-                    <?php get_balance() ?>
+                      <?php get_balance() ?>
                     </div>
                   </div>
                 </h1>
@@ -109,9 +109,9 @@ include "php/statement.php"
                     Last Expense ↓
                   </h5>
                   <h3>
-                  RS.
+                    RS.
 
-                  <?php l_expence() ?>
+                    <?php l_expence() ?>
                   </h3>
                 </div>
               </div>
@@ -125,9 +125,14 @@ include "php/statement.php"
       <div class="row">
         <div class="col-4 borders">
           <div class="container" id="subdetails">
-            <h3>Money Transfre</h3><br>
+            <h3>Money Transfer</h3><br>
             <div class="d-grid gap-2">
-              <button class="btn btn-lg btn-dark"><i class="fa-regular fa-share-from-square"></i> &nbsp;&nbsp;&nbsp;Send Money</button>
+              <center>
+
+                <a href="sendmoney.php">
+                  <button class="btn btn-lg btn-dark"><i class="fa-regular fa-share-from-square"></i> &nbsp;&nbsp;&nbsp;Send Money</button>
+                </a>
+              </center>
             </div>
             <br>
             <br>
@@ -140,7 +145,29 @@ include "php/statement.php"
         </div>
         <div class="col-8 borders">
           <div class="container" id="subdetails">
-            
+            <center>
+
+              <h2 class="text-primary">WELCOME TO EASY E-BANKING!!</h2>
+            </center>
+
+<br><br>
+            <h3 class="text-success">BEST CHOICE TO HAVE THE E_BANKING EXPERIENCE..</h3>
+
+<br>
+<br>
+            <p>
+              Wait for next update ...
+            <ul class="list-group">
+              <li class="list-group-item" >instant virtual cards</li>
+              <li class="list-group-item" >digital wallet integrations</li>
+              <li class="list-group-item" >M-Banking system</li>
+              <li class="list-group-item" >Bill payments</li>
+              <li class="list-group-item" >M-check deposits</li>
+              <li class="list-group-item" >Mobile alerts & remainders</li>
+              <li class="list-group-item" >Add-on service</li>
+            </ul>
+            </p>
+
           </div>
         </div>
       </div>
@@ -154,43 +181,40 @@ include "php/statement.php"
   <script src="js/customjs/slider.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-  const labels = [
-    'Total Income',
-    'Total Expence',
-    
-  ];
+    const labels = [
+      'Total Income',
+      'Total Expence',
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: [
-      '#14A44D',
-      'rgb(212, 50, 66)'
-    ],
-      data: [<?php t_income() ?>, <?php t_expence() ?>],
-    }]
-  };
+    ];
 
-  const config = {
-  type: 'doughnut',
-    data: data,
-    options: {
-      
-    }
-  };
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: [
+          '#14A44D',
+          'rgb(212, 50, 66)'
+        ],
+        data: [<?php t_income() ?>, <?php t_expence() ?>],
+      }]
+    };
 
+    const config = {
+      type: 'doughnut',
+      data: data,
+      options: {
 
+      }
+    };
+  </script>
 
-</script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
 
-<script>
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    
-    config
-  );
-</script>
+      config
+    );
+  </script>
 
   <script src="https://kit.fontawesome.com/be7ffc507d.js" crossorigin="anonymous"></script>
 </body>

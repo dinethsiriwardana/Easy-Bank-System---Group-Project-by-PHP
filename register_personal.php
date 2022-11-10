@@ -36,12 +36,12 @@
 
 <body class="d-flex justify-content-center align-items-center">
 
-    <div class="col-9 borders bg-primary  height500 shadow mb-5  rounded">
+    <div class="col-6 borders bg-primary  height500 shadow mb-5  rounded">
 
-        <form action="./php/get_user_login_data.php?type=user" method="post">
+        <form action="./php/reg_user_p_data.php?user=<?php echo $_GET['user']?>" method="post">
             <div class="container ">
                 <div class="row">
-                    <div class="col-3 d-flex justify-content-center ">
+                    <div class="col d-flex justify-content-center ">
                         <div class="container height300 d-flex justify-content-center align-items-center">
                             <div class="container text-light">
                                 <i class="fa-solid fa-building-columns fa-7x"></i>
@@ -62,10 +62,6 @@
                             <div class="row">
 
                                 <div class="col">
-
-
-
-
 
                                     <div class="container mb-3 p-0 ">
 
@@ -89,81 +85,23 @@
                                             </div>
                                             <div class="col">
                                                 <lable for="Phone Number">Phone Number</lable><br>
-                                                <input class="form-control" type="text" name="Phone Number" id="Phone_Number" placeholder="Phone Number" required>
+                                                <input class="form-control" type="text" name="Phone_Number" id="Phone_Number" placeholder="Phone Number" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="container mb-3 p-0 ">
-                                        <lable for="Residental Address">Residental Address</lable><br>
+                                        <lable for="Residental Address"> Address</lable><br>
                                         <input class="form-control" type="text" name="Street_Address" id="Street_Address" placeholder="Street Address" required>
-                                    </div>
-
-                                    <div class="container mb-3 p-0 ">
-                                        <div class="row">
-                                            <div class="col">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <input class="form-control" type="text" name="Province" id="Province" placeholder="Province" required>
-                                            </div>
-
-                                            <div class="col">
-                                                <input class="form-control" type="text" name="Postal_Code" id="Postal_Code" placeholder="Postal Code" required>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="container mb-3 p-0 ">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <lable for="acc_type">Account Type</lable><br>
-                                                <select class="form-select" name="acc_type" id="acc_type" placeholder="Select Here" required>
-                                                    <option value="Checking Account">Checking Account</option>
-                                                    <option value="Saving Account">Saving Account</option>
-                                                    <option value="A Money Market Account">A Money Market Account</option>
-                                                    <option value="Certificate of Deposit (CD)">Certificate of Deposit (CD)</option>
-                                                    <option value="IRA Account">IRA Account</option>
-                                                </select>
-                                            </div>
-                                            <div class="col">
-                                                <lable for="currency_type">Currency Type</lable><br>
-                                                <select class="form-select" name="currency_type" id="currency_type" placeholder="Select Here" required>
-                                                    <option value="Rs-Sri Lankan Rupees">Rs-Sri Lankan Rupees</option>
-                                                    <option value="USD-Us Dollar">USD-Us Dollar</option>
-                                                    <option value="EUR-Euro">EUR-Euro</option>
-                                                    <option value="GBP-Pound Sterling">GBP-Pound Sterling</option>
-                                                    <option value="CAD-Candian Doller">CAD-Candian Doller</option>
-                                                    <option value="KWD-Kuwaiti Dinar">KWD-Kuwaiti Dinar</option>
-                                                </select>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="container mb-3 p-0 ">
                                         <lable for="Email">Email Address</lable><br>
                                         <input class="form-control" type="text" name="Email" id="Email" placeholder="Email" required>
                                     </div>
-                                    <div class="container mb-3 p-0 ">
-                                        <lable for="Password">Password</lable><br>
 
-                                        <div class="row">
-                                            <div class="col">
-                                                <input class="form-control" type="text" name="password" id="Password" placeholder="Password" required>
-                                            </div>
-                                            <div class="col">
-                                                <input class="form-control" type="text" name="passwordc" id="Password" placeholder="Confirm" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
+                        
                                 </div>
+
+                              
                             </div>
 
 
@@ -178,14 +116,14 @@
                                 <center>
                                     <div class="row">
                                         <div class="d-grid gap-2 col-5 mx-auto">
-                                            <input class="btn btn-outline-primary" type="submit" value="Login" btn id="btn_1">
+                                            <input class="btn btn-outline-primary" type="submit" value="Submit" btn id="btn_1">
                                         </div>
                                         <div class="d-grid gap-2 col-5 mx-auto">
                                             <input class="btn btn-outline-secondary" type="reset" value="Reset" btn id="btn_2">
                                         </div>
                                     </div>
 
-                                    No Account ? <b> <a href="">Create one!</a></b>
+                                  
                                 </center>
 
                             </div>

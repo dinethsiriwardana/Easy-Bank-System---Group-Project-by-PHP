@@ -119,6 +119,8 @@ include "php/statement.php" ;
                     Last Expense ↓
                   </h5>
                   <h3>
+                  RS.
+
                   <?php l_expence() ?>
                   </h3>
                 </div>
@@ -137,13 +139,13 @@ include "php/statement.php" ;
             <form action="php/send_money.php" method="post">
               <center>
 
-                <h3>Money Transfre</h3><br>
+                <h3>Money Transfer</h3><br>
               </center>
               <div class="row">
                 <div class="col">
 
                   <label for="admin/user">Account Name:</label>
-                  <input class="form-control" type="text" name="sname" id="sname" value="sname" readonly required><br>
+                  <input class="form-control" type="text" name="sname" id="sname" value="<?php echo $row["fname"].' '.$row["lname"] ?>" readonly required><br>
                   <label for="admin/user">Account Number:</label>
                   <input class="form-control" type="text" name="snumber" id="snumber" value="<?php echo $_COOKIE['UID']; ?>" readonly><br>
                   <hr>

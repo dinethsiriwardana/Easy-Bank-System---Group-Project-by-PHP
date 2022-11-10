@@ -15,6 +15,7 @@ if ($_GET['type'] == 'submit') {
                 s_r_account_number INT(9)  NOT NULL,
                 s_r_account_name varchar(45) NOT NULL,
                 amount double(20,2) NOT NULL,
+                description varchar(200) NOT NULL,
                 PRIMARY KEY (rec_no)
             )AUTO_INCREMENT=1";
 

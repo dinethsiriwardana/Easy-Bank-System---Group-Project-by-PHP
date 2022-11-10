@@ -92,7 +92,7 @@
                             </div>
                             <div class="row mt-3">
                                 <center>
-                                    Have as Account ? <b> <a href="user_login.php">Login</a></b>
+                                    Have as an Account ? <b> <a href="user_login.php">Login</a></b>
                                 </center>
 
                             </div>

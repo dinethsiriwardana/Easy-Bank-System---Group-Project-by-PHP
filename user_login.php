@@ -44,6 +44,7 @@
                     <div class="col d-flex justify-content-center ">
                         <div class="container height300 d-flex justify-content-center align-items-center">
                             <div class="container text-light">
+        
                                 <i class="fa-solid fa-building-columns fa-7x"></i>
                                 <h1 class="display-1">
                                     Easy
@@ -100,7 +101,7 @@
                                     <br>
                             
 
-                                    <a href="admin_login.php">Login as a Admin</a>
+                                    <a href="admin_login.php">Login as an Admin</a>
                                
                                 </center>
                             </div>

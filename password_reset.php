@@ -103,19 +103,19 @@ include "php/getdetails.php";
                     <span id="message1" style="color:red"> </span>
                   </div>
                   <label for="admin/user">Old Password:</label>
-                  <div> <input class="form-control" type="password" size="40" maxlength="10" name="pwdOld" id="pwdOld" placeholder="Old Password" />
+                  <div> <input class="form-control" type="password" size="40" maxlength="11" name="pwdOld" id="pwdOld" placeholder="Old Password" />
                     <span id="message2" style="color:red"> </span>
                   </div>
                   <div class="pb-3"> <input class="form-check-input" type="checkbox" onclick="showPwdOld()"> Show password </div>
 
                   <label for="admin/user">New Password:</label>
-                  <div> <input class="form-control" type="password" size="40" maxlength="10" id="pwdNew" name="pwdNew" placeholder="New Password" onkeyup="myFunction()" />
+                  <div> <input class="form-control" type="password" size="40" maxlength="11" id="pwdNew" name="pwdNew" placeholder="New Password" onkeyup="myFunction()" />
                     <span id="message3" style="color:red"> </span>
                   </div>
                   <div class="pb-3"> <input class="form-check-input" type="checkbox" onclick="showPwdNew()"> Show password </div>
 
                   <label for="admin/user">Confirm Password :</label>
-                  <div> <input class="form-control" type="password" size="40" maxlength="10" name="pwdCom" id="pwdCom" placeholder=" Password" onkeyup="myFunctions()" />
+                  <div> <input class="form-control" type="password" size="40" maxlength="11" name="pwdCom" id="pwdCom" placeholder=" Password" onkeyup="myFunctions()" />
                     <span id="message4" style="color:red"> </span>
                     <span id="confirmPassword" style="color:red"></span>
                   </div>
@@ -129,7 +129,7 @@ include "php/getdetails.php";
                     <li id="simple" class="invalid">A lowercase letter</li>
                     <li id="capital" class="invalid">An uppercase letter</li>
                     <li id="number" class="invalid">At least one number </li>
-                    <li id="length" class="invalid"> 8 to 10 characters </li>
+                    <li id="length" class="invalid"> 8 to 11 characters </li>
                     <li id="special" class="invalid"> A special character (!,@,#,$,%,&) </li>
                   </ul>
                   <hr>
