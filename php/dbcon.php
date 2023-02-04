@@ -1,9 +1,9 @@
 <?php
 
-  $servername='191.96.56.1';
-  $username='u812963415_ruhunafot';
-  $password='eK4y*3RJt=8';
-  $dbname='u812963415_ruhunafot';
+  $servername='localhost';
+  $username='u812963415_easybank';
+  $password='E6lMvnO~l9';
+  $dbname='u812963415_easybank';
 
 
 
