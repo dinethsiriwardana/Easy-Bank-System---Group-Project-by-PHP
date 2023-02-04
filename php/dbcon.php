@@ -1,6 +1,6 @@
 <?php
 
-  $servername='localhost';
+  $servername='191.96.56.1';
   $username='u812963415_easybank';
   $password='E6lMvnO~l9';
   $dbname='u812963415_easybank';

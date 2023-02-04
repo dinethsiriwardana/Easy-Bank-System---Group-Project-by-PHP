@@ -58,7 +58,7 @@
 
     <div class="col-6 borders bg-primary  height500 shadow mb-5  rounded">
 
-        <form action="./php/reg_user_data.php" method="post">
+        <form action="./php/reset_pwd_loggin.php" method="post">
             <div class="container ">
                 <div class="row">
                     <div class="col d-flex justify-content-center ">
@@ -75,12 +75,12 @@
                     <div class="col  bg-light height500 shadow-inner d-flex justify-content-center align-items-center">
                         <div class="container">
                             <center>
-                                <h2>User Registration</h2>
+                                <h2>Password Reset</h2>
                                 <br>
                             </center>
                             <?php 
                             if(isset($_GET['error'])) {
-                                if ($_GET['error'] == 'haveacc') {
+                                if ($_GET['error'] == 'error') {
                                     echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                                     <strong>Error!</strong> This Username is already taken
                                     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
@@ -96,22 +96,21 @@
                             ?>
                             <label for="admin/user">User Name:</label>
                             <input class="form-control" type="text" name="username" id="username" required><br>
+                            <label for="admin/user">Email:</label>
+                            <input class="form-control" type="text" name="email" id="username" required><br>
+                            <label for="admin/user">Account No:</label>
+                            <input class="form-control" type="text" name="account" id="username" required><br>
                             <label for="password">Password :</label>
                             <input class="form-control" type="password" id="password" name="password" maxlength="10" required ><br>
                             <label for="password">Password Confirm :</label>
                             <input class="form-control" type="password" id="passwordcfm" name="passwordcfm" maxlength="10" required><br>
                             <div class="row">
                                 <div class="d-grid gap-2 col-5 mx-auto">
-                                    <input class="btn btn-outline-danger disabled" type="submit" value="Register" id="submitbtn">
+                                    <input class="btn btn-outline-danger disabled" type="submit" value="Reset" id="submitbtn">
                                 </div>
 
                             </div>
-                            <div class="row mt-3">
-                                <center>
-                                    Have as an Account ? <b> <a href="user_login.php">Login</a></b>
-                                </center>
 
-                            </div>
                         </div>
                     </div>
 

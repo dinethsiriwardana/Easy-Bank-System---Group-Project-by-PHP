@@ -48,7 +48,7 @@ function decryption($key)
 
     
     $decryption = openssl_decrypt(
-        "i0CgZiaLAd4=",
+        "2xb8PXmIAt8=",
         $ciphering,
         $decryption_key,
         $options,

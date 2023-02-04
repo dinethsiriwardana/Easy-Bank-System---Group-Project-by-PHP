@@ -94,6 +94,11 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
+                                <center style="font-size: 15px;" >
+                                Password Incorrect ? <b> <a href="password_reset_loggin.php">Reset</a></b>
+                                </center>
+                                <br>
+                                <br>
                                 <center>
                                 No Account ? <b> <a href="register.php">Create one!</a></b>
                                 </center>
